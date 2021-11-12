@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=2.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-1.43,-1.09) grid (4.36,3.23);
+\draw[->,color=black] (-1.43,0) -- (4.36,0);
+\foreach \x in {-1,-0.5,0.5,1,1.5,2,2.5,3,3.5,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+\draw[->,color=black] (0,-1.09) -- (0,3.23);
+\foreach \y in {-1,-0.5,0.5,1,1.5,2,2.5,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+\clip(-1.43,-1.09) rectangle (4.36,3.23);
+\draw [shift={(0,0)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (0:0.18) arc (0:48.06:0.18) -- cycle;
+\draw [shift={(2.56,0)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (0:0.18) arc (0:48.06:0.18) -- cycle;
+\draw [->,line width=2pt] (0,0) -- (2.56,0);
+\draw [domain=-1.43:4.36] plot(\x,{(--3.18-0*\x)/2.56});
+\draw [->,line width=2pt] (0,0) -- (1.11,1.24);
+\draw [domain=-1.43:4.36] plot(\x,{(-3.18--1.24*\x)/1.11});
+\draw (3.68,-1.09) -- (3.68,3.23);
+\draw(0,0) circle (2*3.88cm);
+\draw (2.94,0.01) node[anchor=north west] {$ \frac{y\cos(\alpha)}{\sin(\alpha)} $};
+\draw (0.64,0.79) node[anchor=north west] {$\frac{y}{\sin(\alpha)}$};
+\draw (0.99,-0.02) node[anchor=north west] {$x-\frac{y\cos(\alpha)}{\sin(\alpha)}$};
+\begin{scriptsize}
+\fill [color=qqqqff] (1.11,1.24) circle (1.5pt);
+\draw[color=qqqqff] (1.16,1.32) node {$A$};
+\fill [color=xdxdff] (2.56,0) circle (1.5pt);
+\draw[color=xdxdff] (2.57,0.11) node {$B$};
+\draw[color=black] (1.64,0.09) node {$\theta_1$};
+\fill [color=xdxdff] (0,0) circle (1.5pt);
+\draw[color=xdxdff] (0.03,0.12) node {O};
+\draw[color=black] (0.66,0.76) node {$\theta_2$};
+\draw[color=qqwuqq] (0.21,0.08) node {$\alpha$};
+\fill [color=uququq] (0,1.24) circle (1.5pt);
+\draw[color=uququq] (0.06,1.34) node {y};
+\fill [color=qqqqff] (3.68,1.24) circle (1.5pt);
+\draw[color=qqqqff] (3.86,1.31) node {(x, y)};
+\fill [color=uququq] (3.68,0) circle (1.5pt);
+\draw[color=uququq] (3.72,0.08) node {x};
+\draw[color=qqwuqq] (2.75,0.06) node {$\alpha$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
