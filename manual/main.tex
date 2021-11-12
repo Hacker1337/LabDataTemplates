@@ -75,14 +75,14 @@ $$ \sigma_x = M[(x-M[x])^2] = M[\Delta x^2] = \langle(x - \langle x \rangle)^2\r
 
 Если распределение $x$ нормальное, среднеквадратичное отклонение определяет коэффициент в показателе экспоненты
 \[ P(x) \propto \exp \left(\frac{-\Delta x^2}{2\sigma_x^2} \right) \]
-\subsection{Формула тейлора}
+\subsection{Формула Тейлора}
 Функцию одной переменной можно приблизить многочленом Тейлора
 $$ f(x_0 + \Delta x) = f(x_0) + f^{(1)}(x_0) \Delta x + ... + \frac{f^{(n)}(x_0) \Delta x^n}{n!} + o(\Delta x^n)$$
-Функцию нескольких переменных можно разложить по одной и переменных
+Функцию нескольких переменных можно разложить по одной из переменных
 $$ f(x_0 + \Delta x, y) = 
 f(x_0, y) + 
 \frac{\partial f(x_0, y)}{\partial x} \Delta x + ... + \frac{\partial^n f(x_0, y)}{\partial x^n}\frac{ \Delta x^n}{n!} + o(\Delta x^n)$$
-А потом каждое слогаемое разложить в ряд Тейлора по второй переменной. То есть считая $\Delta x$ и $\Delta y$ одного порядка малости (все частные производные в точке $(x_0, y_0)$  и используется обозначение $\partial_x f = \frac{\partial f}{\partial x}$)
+А потом каждое слагаемое разложить в ряд Тейлора по второй переменной. То есть считая $\Delta x$ и $\Delta y$ одного порядка малости (все частные производные в точке $(x_0, y_0)$  и используется обозначение $\partial_x f = \frac{\partial f}{\partial x}$)
 
     \[ f(x_0 + \Delta x, y_0 + \Delta y) = \]
 \begin{equation*}
@@ -95,12 +95,12 @@ f(x_0, y) +
             +\d[n]{y}f\frac{\Delta y^n}{n!} \qquad\qquad\qquad\qquad\quad &
     \end{split}
 \end{equation*}
-То же самое можно переписать, как суммы слагаемых с одинаковой суммой степеней при $\Delta $и $x\Delta y$
+То же самое можно переписать, как суммы слагаемых с одинаковой суммой степеней при $\Delta x$и $\Delta y$
 \begin{equation*}
     f(x_0 + \Delta x, y_0 + \Delta y) =
     \sum_{k=0}^n \sum_{i=0}^k \d[i]{x}\d[k-i]{y}f\frac{\Delta x^i \Delta y^{k-i}}{i!(k-i)!} + o(\Delta x^n)  
 \end{equation*}
-Можно еще вынести $k!$ за скобку и получатся коэффициенты бинома ньютона
+Можно еще вынести $k!$ за скобку и получатся коэффициенты бинома Ньютона
 \begin{equation*}
     f(x_0 + \Delta x, y_0 + \Delta y) =
     \sum_{k=0}^n \frac{1}{k!}\sum_{i=0}^k \d[i]{x}\d[k-i]{y}f\Delta x^i \Delta y^{k-i}C_k^i + o(\Delta x^n)  
@@ -125,7 +125,7 @@ f(x_0, y) +
 \subsection{Погрешность функции}
 \includegraphics[width=0.8\paperwidth, center]{погрешность_функции.png}
 Взято оттуда же.
-Убедиться в том, на сколько этот вывод некорректный можно рассмотрев такой пример.
+Убедиться в том, на сколько этот вывод некорректный для зависимых переменных можно рассмотрев такой пример.
 
 \[ f(x, y) = \frac{x}{y} \]
 Имея измерение $t \pm \Delta t$, рассчитаем значение
@@ -169,7 +169,7 @@ f(x_0, y) +
 
 Подставим выражение для второй производной через $\sigma$ и запишем множитель перекрёсного слагаемого через
 обозначение 
-\[corr = \frac{\frac{\partial\chi^2}{\partial x}\frac{\partial \chi^2}{\partial y}}{\sqrt{
+\[corr = -\frac{\frac{\partial\chi^2}{\partial x}\frac{\partial \chi^2}{\partial y}}{\sqrt{
     \frac{\partial^2\chi^2}{\partial x^2}\frac{\partial^2\chi^2}{\partial y^2}
 }} =
 -\frac{\d{\theta_1}\chi^2\d{\theta_2}\chi^2}{\sqrt{\d[2]{\theta_1}\chi^2\d[2]{\theta_2}\chi^2}} = \frac{D_{\theta_1\theta_2}}{\sigma_{\theta_1}\sigma_{\theta_2}}\]
@@ -179,17 +179,17 @@ f(x_0, y) +
 Очень хочется сказать, что это квадрат суммы, но там перекрёстное слагаемое другое,
 так что естественно будет сказать, что это скалярный квадрат суммы двух векторов.
 Тогда угол между ними будет определять множитель этого перекрёстного слагаемого.
-Чтобы было совсем красиво, возьмём эти базисные вектора не только не ортогональными, но и не нормированными.
+Чтобы было совсем красиво, возьмём эти базисные векторы не только не ортогональными, но и не нормированными.
 Тогда
 \[\left\lvert \vec{e}_{\theta_1} \right\rvert = \frac{1}{\sigma_{\theta_1}}\]
-\[ \vec{\theta_1} = \theta_1\vec{e}_{\theta_1} \]
+\[ \vec{\theta}_1 = \theta_1\vec{e}_{\theta_1} \]
 \[\left\lvert \vec{e}_{\theta_2} \right\rvert = \frac{1}{\sigma_{\theta_2}}\]
-\[ \vec{\theta_2} = \theta_2\vec{e}_{\theta_2} \]
+\[ \vec{\theta}_2 = \theta_2\vec{e}_{\theta_2} \]
 \[ \frac{corr}{\sigma_{\theta_1}\sigma_{\theta_2}} = -\vec{e}_{\theta_1}\vec{e}_{\theta_2} = \frac{-\cos(\alpha)}{\sigma_{\theta_1}\sigma_{\theta_2}}\]
 
 \[ \frac{\theta_1^2}{\sigma_{\theta_1}^2} - 2 \frac{corr \theta_1 \theta_2}{\sigma_{\theta_1} \sigma_{\theta_2}} + \frac{\theta_2^2}{\sigma_{\theta_2}^2}
-= \vec{\theta_1}^2 + 2\vec{\theta_1}\vec{\theta_2} + \vec{\theta_2}^2 =
-(\vec{\theta_1} + \vec{\theta_2})^2 \]
+= \vec{\theta_1}^2 + 2\vec{\theta}_1\vec{\theta}_2 + \vec{\theta_2}^2 =
+(\vec{\theta}_1 + \vec{\theta}_2)^2 \]
 
 
 Тогда в ортонормированном базисе($x$, $y$), где косинус угла между векторами $\vec{e}_{\theta_1}$ и $\vec{e}_{\theta_2}$ равен $corr$
@@ -253,7 +253,7 @@ f(x_0, y) +
 
 \section{Погрешность функции от зависимых переменных}
 
-В случае зависимх переменных  слогаемые с ковариациями ($\langle \theta_1\theta_2\rangle$)
+В случае зависимых переменных  слагаемые с ковариациями ($\langle \theta_1\theta_2\rangle$)
 не будет нулевым. Распишем по определению погрешность через линейное приближение функции.
 \[ \langle \Delta f(\theta)^2 \rangle = 
 \langle (f(\theta + \Delta \theta)-f(\theta))^2\rangle
@@ -263,12 +263,12 @@ f(x_0, y) +
 = \sum_{i=1}^{n}\sum_{j=1}^{n} D_{\theta_i\theta_j} \d{\theta_i} f \d{\theta_j} f \]
 
  Где  сначала $\Delta \theta_i$ множество параметров, где i-ый элемент изменён, а остальные нет, а потом просто изменение i-ого аргумента,
-  $\Delta f(\Delta \theta_i) = f(\Delta \theta_i) - f(\theta_i)$.
+  и $\Delta f(\Delta \theta_i) = f(\Delta \theta_i) - f(\theta_i)$.
 
 При обработке данных может быть удобнее использовать формулу через численную частную производную и корреляцию.
 \[  \sum_{i=1}^{n}\sum_{j=1}^{n} corr_{ij}\Delta f(\Delta \theta_i)\Delta f(\Delta \theta_j) \]
-Где уже $\Delta \theta_i$ множество параментов $\theta$ в котором i-ый параметр изменили на $\sigma_{\theta_i}$ 
+Где уже $\Delta \theta_i$ множество параметров $\theta$ в котором i-ый параметр изменили на $\sigma_{\theta_i}$ 
 \section{Вывод}
 % напишу формулки, полезные на практике 
-
+Выводы делайте сами!
 \end{document}

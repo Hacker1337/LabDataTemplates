@@ -1,7 +1,7 @@
 examples/trash_img
 .idea
 *checkpoint.ipynb
-.aux
-.log
-.out
-.gz
+*.aux
+*.log
+*.out
+*.gz
