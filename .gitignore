@@ -6,3 +6,4 @@
 *.gz
 venv
 *trash_img*
+local_projects
