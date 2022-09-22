@@ -24,3 +24,9 @@ Physics Laboratory Data Analysis Templates
 
 [//]: # (![alt text]&#40;https://github.com/Hacker1337/LabDataTemplates/blob/master/examples/img/облась_ошибки_линейная.png?raw=true&#41;)
 
+## Installation and Launching
+Необходимые python библиотеки указаны в **requirements.txt**. Также для отрисовки по умолчанию используется **latex**. Если он не установлен, надо либо установить его, либо убрать строчку из преамбулы кода
+
+```
+    "text.usetex" : True,
+```
