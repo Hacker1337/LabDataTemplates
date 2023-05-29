@@ -7,9 +7,9 @@ Physics Laboratory Data Analysis Templates
 
 Результат работы выглядит примерно так.
 
-![пример](examples/img/v1example2.png)
+![пример](examples/img/example2.v3.jpg)
 <!-- ![пример2](examples/img/v1example.png) -->
-![пример2](examples/img/example.v2.jpg)
+![пример2](examples/img/example.v3.jpg)
 
 Код делает следующее:
 - наносит на график экспериментальные точки с крестами погрешности
